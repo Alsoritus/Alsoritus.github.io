@@ -10,7 +10,7 @@
   
   <title>
     
-      学习随记
+      Tags | 学习随记
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -192,40 +192,42 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">Archives</p>
+  <h2>Tags</h2>
+  <p class="post-date">Tag Retrieval</p>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2025
-  </h1>
-  <div class="section-list">
+<main class="app-body">
+  <div id="tag-cloud">
     
-    
-      <div class="section-list-item">
-        <a href="/2025/12/09/%E6%95%B0%E5%88%97%E4%BC%B0%E9%98%B6/" class="archive-title">数列估阶</a>
-        <p class="archive-date">12-09</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2025/12/08/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">12-08</p>
-      </div>
+      <a class="tag1" data-name="tag-数学分析">数学分析</a>
     
   </div>
-</section>
   
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-数学分析">数学分析</h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/2025/12/09/数列估阶/">数列估阶</a>
+          </li>
+        </ul>
+        
+    </div>
+    
 </main>
 
 <script>
   (function () {
-    var url = 'https://alsoritus.github.io/archives/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'https://alsoritus.github.io/tags/index.html'
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+    var tag = location.hash.replace('#', '')
+    if (tag) {
+      var tagId = "#tag-" + tag;
+      $("html, body").animate({
+        scrollTop: $(tagId).offset().top 
+      }, 400)
+    }
   })();
 </script>
     <div class="scroll-top">
